@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -35,18 +36,14 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-              <span className="text-primary-foreground font-serif text-xl font-bold">H</span>
-            </div>
-            <div>
-              <span className={`font-serif text-xl font-bold transition-colors ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
-                Hedgehogs
-              </span>
-              <span className={`block text-xs tracking-widest uppercase transition-colors ${isScrolled ? 'text-muted-foreground' : 'text-primary-foreground/70'}`}>
-                Landscaping
-              </span>
-            </div>
+          <a href="#home" className="group">
+            <img 
+              src={logo} 
+              alt="Hedgehogs Landscaping" 
+              className={`h-12 md:h-14 w-auto transition-all duration-300 group-hover:scale-105 ${
+                isScrolled ? "" : "brightness-0 invert"
+              }`}
+            />
           </a>
 
           {/* Desktop Navigation */}
